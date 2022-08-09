@@ -1,13 +1,14 @@
 ---
-title: "Social Capital"
-author: "David Kane"
-date: "2022-08-02"
-output: html_document
+title: "Economic Connectedness"
+description: |
+  This is where I will describe my project.
+site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
+library(ggthemes)
 ```
 
 
@@ -16,6 +17,7 @@ library(tidyverse)
 ec <- read_rds("ec.rds")
 ```
 
+## Graph One
 
 ```{r}
 # Look at missing data later.
@@ -31,10 +33,10 @@ ec |>
          x = "Population",
          title = "Economic Connectedness and Population in US Counties",
          subtitle = "There is no relationship between population and economic connectedness in US counties.")
-  
 ```
 
 
+## Graph Two
 
 ```{r}
 ec |> 
@@ -52,18 +54,4 @@ ec |>
          x = "State Population",
          title = "Economic Connectedness and Population in US States",
          subtitle = "Biggger states have counties with lower average economic connectedness.")
-
-
 ```
-
-
-
-
-|> 
-  ggplot(aes(x = pop_state, y = avg_ec)) +
-    geom_point() +
-
-
-
-
-
